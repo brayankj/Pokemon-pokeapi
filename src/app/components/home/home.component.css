@@ -1,0 +1,62 @@
+a {
+    cursor: pointer;
+}
+
+img {
+    margin: 10px;
+    width: 120px;
+}
+
+form {
+    margin: 20px 0 10px 0;
+    width: 100%;
+}
+
+form input {
+    height: 30px;
+    padding: 5px;
+}
+
+form button {
+    height: 30px;
+    padding: 0 12px;
+}
+
+form button i {
+    color: black;
+}
+
+.SubTitulo ul li {
+    display: inline-block;
+    padding: 10px;
+}
+
+.SubTitulo ul li {
+    float: right;
+}
+
+.card {
+    box-shadow: 1px 2px rgba(0, 0, 0, 0.6);
+    cursor: pointer;
+}
+
+.card img {
+    margin: 0;
+    width: 70px;
+    height: 70px;
+}
+
+#staticBackdrop #pokeball {
+    width: 40px;
+    height: 40px;
+}
+
+#staticBackdrop img {
+    width: 200px;
+    height: 200px;
+}
+
+#modalbuscar #pokeball2 {
+    width: 40px;
+    height: 40px;
+}

@@ -1,0 +1,91 @@
+<div class="container">
+    <div class="row text-center">
+        <div class="col-12 col-md-6">
+            <a>
+                <img src="./assets/img/pokemon.png" alt="Pokémon">
+            </a>
+        </div>
+        <div class="col-12 col-md-6 ">
+            <form class="" [formGroup]="Buscar">
+                <div class="form-group">
+                    <input formControlName="NamePokemon" type="text" class="form-control" placeholder="Buscar Pokémon">
+                </div>
+                <button data-toggle="modal" data-target="#modalbuscar" class="btn" (click)="clickBuscar(Buscar.value)" [disabled]="Buscar.invalid"><i class="fas fa-search"></i></button>
+            </form>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-12 SubTitulo">
+            <ul>
+                <li>
+                    <button [disabled]="next==null" (click)="Next(next)" class="rounded-circle btn btn-outline-dark">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </li>
+                <li>
+                    <button [disabled]="previous==null" (click)="Previous(previous)" class="rounded-circle btn btn-outline-dark">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                </li>
+            </ul>
+        </div>
+
+        <div class="col-sm-6 col-md-3" *ngFor="let pokemon of pokemons">
+            <div class="card text-center my-2">
+                <div data-toggle="modal" data-target="#staticBackdrop" (click)="verPokemon(pokemon.url)" class="card-body">
+                    <p class="mb-0">{{pokemon.name }}</p>
+                    <img src="./assets/img/pokeball3.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="modal fade" id="staticBackdrop" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true" *ngIf="Pokemon">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">
+                    <img id="pokeball" src="../../../assets//img/pokeball3.png" alt=""> {{Pokemon.name | uppercase}}
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <i aria-hidden="true" class="far fa-times-circle text-danger"></i>
+                </button>
+            </div>
+            <div class="modal-body text-center">
+                <img [src]="img.front_default" alt="">
+                <p>Numero Pokedex: {{Pokemon.id}}</p>
+                <p>Experiencia Base : {{Pokemon.base_experience}}</p>
+                <p>habilidades : {{abilities.name}} </p>
+
+                <p>Peso : {{Pokemon.weight}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modalbuscar" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true" *ngIf="Pokemon">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">
+                    <img id="pokeball2" src="../../../assets//img/pokeball3.png" alt=""> {{Pokemon.name | uppercase}}
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <i aria-hidden="true" class="far fa-times-circle text-danger"></i>
+                </button>
+            </div>
+            <div class="modal-body text-center">
+                <img [src]="img.front_default" alt="">
+                <p>Numero Pokedex: {{Pokemon.id}}</p>
+                <p>Experiencia Base : {{Pokemon.base_experience}}</p>
+                <p>habilidades : {{abilities.name}} </p>
+
+                <p>Peso : {{Pokemon.weight}}</p>
+            </div>
+        </div>
+    </div>
+</div>
